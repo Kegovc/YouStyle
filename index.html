@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css" />
+  <title>You Style</title>
+  
+</head>
+<body>
+  <!-- (section#YourEssence>(strong#Name{Nombre}+(p>(i#Age{Edad}+i#Pronoun{ }+i#Zodiac{Zodiaco}))+article>ul>(li#*12>(img[src="" alt=""]+span))+(li#>img[src="" alt=""])))+(div[style="display: flex;justify-content: center;"]>button.startBtn[rol="button" href="/#Form"]{Empezar}) -->
+  <section id="YourEssence">
+    <strong id="Name">Nombre</strong>
+    <p>
+      <i id="Age">Edad</i><i id="Pronoun"> </i><i id="Zodiac">Zodiaco</i>
+    </p>
+    <article>
+      <ul>
+        <li id="Mbti"><img src="" alt=""><span>MBTI</span></li>
+        <li id="Food"><img src="" alt=""><span>Comida</span></li>
+        <li id="Character"><img src="" alt=""><span>Personaje</span></li>
+        <li id="Color"><img src="" alt=""><span>Color Fav</span></li>
+        <li id="Place"><img src="" alt=""><span>Lugar</span></li>
+        <li id="Seson"><img src="" alt=""><span>Estacion del año</span></li>
+        <li id="Hobby"><img src="" alt=""><span>Pasatiempo</span></li>
+        <li id="Music"><img src="" alt=""><span>Musica</span></li>
+        <li id="Career"><img src="" alt=""><span>Carrera/Profecion</span></li>
+        <li id="Flower"><img src="" alt=""><span>Flor</span></li>
+        <li id="Animal"><img src="" alt=""><span>Animal</span></li>
+        <li id="App"><img src="" alt=""><span>App</span></li>
+        <li id="You"><img src="" alt=""></li>
+      </ul>
+    </article>
+    
+  </section>
+  <div style="display: flex;justify-content: center;"><a class="startBtn" role="button" href="/#Form">Empezar</a></div>
+  <!-- section#Form>form>((div.field>(label[for="i-name"]{Tu nombre}+input:text#i-name[name="name"]+span#i-name-error{}))+(div.field>(label[for="i-age"]{Tu fecha de nacimiento}+input#i-age[type="date" name="age"]+span#i-age-error{}))+(div.field*13>(label[for="i-${1:input}"]{${2:label}}+input[id="i-${1:input}" type="file" name="${1:input}"]+span[id="i-${1:input}-error"]{}))+(div.keypad>(button:reset{Limpiar}+button:submit{Crear}))) -->
+     <section id="Form">
+      <form onsubmit="valid(event)" >
+        <div class="field"><label for="i-name">Tu nombre</label><input type="text" name="name" id="i-name" :invalid><span id="i-name-error"></span></div>
+        <div class="field"><label for="i-age">Tu fecha de nacimiento</label><input type="date" id="i-age" name="age"><span id="i-age-error"></span></div>
+        <div class="field"><label for="i-mbti">MBTI</label><input type="file" id="i-mbti" name="mbti"><span id="i-mbti-error"></span></div>
+        <div class="field"><label for="i-food">Comida</label><input type="file" id="i-food" name="food"><span id="i-food-error"></span></div>
+        <div class="field"><label for="i-character">Personaje</label><input type="file" id="i-character" name="character"><span id="i-character-error"></span></div>
+        <div class="field"><label for="i-color">Color</label>
+          
+            <input type="file" id="i-color" name="color">
+          
+          
+          <span id="i-color-error"></span>
+        </div>
+        <div class="field"><label for="i-place">Lugar</label><input type="file" id="i-place" name="place"><span id="i-place-error"></span></div>
+        <div class="field"><label for="i-seson">Estacion del año</label><input type="file" id="i-seson" name="seson"><span id="i-seson-error"></span></div>
+        <div class="field"><label for="i-hobby">Pasatiempo</label><input type="file" id="i-hobby" name="hobby"><span id="i-hobby-error"></span></div>
+        <div class="field"><label for="i-music">Musica</label><input type="file" id="i-music" name="music"><span id="i-music-error"></span></div>
+        <div class="field"><label for="i-career">Carrera/Profecion</label><input type="file" id="i-career" name="career"><span id="i-career-error"></span></div>
+        <div class="field"><label for="i-flower">Flores</label><input type="file" id="i-flower" name="flower"><span id="i-flower-error"></span></div>
+        <div class="field"><label for="i-animal">Animal</label><input type="file" id="i-animal" name="animal"><span id="i-animal-error"></span></div>
+        <div class="field"><label for="i-app">App</label><input type="file" id="i-app" name="app"><span id="i-app-error"></span></div>
+        <div class="field"><label for="i-you">Selfi</label><input type="file" id="i-you" name="you"><span id="i-you-error"></span></div>
+        <div class="keypad">
+          <button type="reset">Limpiar</button>
+          <button type="submit">Crear</button>
+        </div>
+     </section>
+
+  
+  <script src="./index.js"></script>
+</body>
+</html>

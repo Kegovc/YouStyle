@@ -1,0 +1,283 @@
+body{
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+#YourEssence{
+  --size: 20vmin;
+  --time: 1.5s; 
+  display: grid;
+  width: 100vmin;
+  min-height: 100vmin;
+  background-color: var(--color,#fff);
+  padding: 10px;
+}
+
+#YourEssence>strong{
+  font-size: 2rem;
+}
+
+#YourEssence>p{
+  margin: 4px;
+  font-size: 1.1rem;
+  display: flex;
+  gap: 8px;
+}
+
+#YourEssence>p>i{
+  min-width: 50px;
+  text-align: center;
+}
+
+#YourEssence>article{
+  padding: 0 20px;
+  justify-self: center;
+}
+#YourEssence>article>ul{
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, var(--size));
+  grid-template-rows: repeat(4, var(--size));
+  width: calc(4 * var(--size));
+  border: 1px solid;
+}
+
+#YourEssence>article>ul>li{
+  display: grid;
+  padding: 0;
+  border: 1px solid;
+  position: relative;
+}
+#YourEssence>article>ul>li#You{
+  grid-column: 2 / 2 span;
+  grid-row: 2 / 2 span;
+}
+
+#YourEssence>article>ul>li>span{
+  display: grid;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  text-align: center;
+  place-content: center;
+  background-color: #fff;
+}
+#YourEssence:not(.snap) > article > ul > li > img,
+#YourEssence:not(.snap) > article > ul > li > span {
+  position: absolute;
+}
+#YourEssence.snap > article > ul > li > span{
+  display: none;
+}
+#YourEssence>article>ul>li>img{
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+#YourEssence>article>ul>li>img[src=""]{
+  display: none;
+}
+#YourEssence > article > ul > li {
+  position: relative;
+  perspective: 1000px;
+}
+
+#YourEssence > article > ul > li > img,
+#YourEssence > article > ul > li > span {
+  width: 100%;
+  height: 100%;
+}
+#YourEssence > article > ul > li:not(#You) > img,
+#YourEssence > article > ul > li:not(#You) > span {
+  backface-visibility: hidden;
+  transition: transform var(--time);
+}
+
+#YourEssence > article > ul > li:not(#You) > img:not([src=""]) {
+  transform: rotateY(0deg);
+}
+
+#YourEssence > article > ul > li:not(#You) > img:not([src=""]) + span {
+  transform: rotateY(180deg);
+}
+
+#YourEssence:not(.snap) > article > ul > li:not(#You):hover > img:not([src=""]) {
+  transform: rotateY(180deg);
+}
+
+#YourEssence:not(.snap) > article > ul > li:not(#You):hover > img:not([src=""]) + span {
+  transform: rotateY(360deg);
+}
+
+
+
+/* CSS */
+.startBtn {
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.startBtn:hover,
+.startBtn:focus {
+  background-color: #F082AC;
+}
+
+#Form{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Form>form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  scroll-snap-align: center;
+  justify-content: space-evenly;
+}
+
+#Form>form>div.field{
+  display: grid;
+  grid-template-rows: 2rem 3.3rem .8rem;
+  grid-template-columns: 200px;
+  height: 6rem;
+}
+
+
+#Form>form>div.field>label {
+  font-size: 0.9rem;
+  color: #333;
+}
+#Form>form>div.field>div{
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  gap: 0.5rem;
+}
+#Form>form>div.field>div>input[type="color"]{
+  align-self: center;
+  aspect-ratio: 1;
+  width: 27px;
+}
+#Form>form>div.field input[type="text"],
+#Form>form>div.field input[type="date"] {
+  height: 40px;
+  padding: 0 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  font-size: 0.9rem;
+  transition: border 0.2s;
+}
+
+#Form>form>div.field input[type="text"]:focus,
+#Form>form>div.field input[type="date"]:focus {
+  border-color: #15A986;
+}
+
+#Form>form>div.field input[type="text"]:invalid,
+#Form>form>div.field input[type="date"]:invalid {
+  border-color: #e53935;
+}
+#Form>form>div.field>span{
+  display: none;
+}
+
+#Form>form>div.field input[type="file"] {
+  display: block;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+/* Hace que el botón sea tipo bloque (arriba) */
+#Form>form>div.field input[type="file"]::file-selector-button {
+  display: block;
+  margin-bottom: 6px;
+  padding: 6px 10px;
+}
+
+#Form>form>div.field input[type="text"]:invalid + span,
+#Form>form>div.field input[type="date"]:invalid + span,
+#Form>form>div.field input[type="file"]:invalid + span {
+  font-size: 0.75rem;
+  color: #e53935;
+  display: inline;
+}
+
+#Form>form>div.keypad{
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+#Form>form>div.keypad>button {
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  max-width: 100px;
+}
+
+
+
+#Form>form>div.keypad>button[type="reset"]{
+  background-color: #FF7043;
+  color: #fff;
+}
+
+#Form>form>div.keypad>button[type="reset"]:hover,
+#Form>form>div.keypad>button[type="reset"]:focus {
+  background-color: #D84315;
+}
+
+#Form>form>div.keypad>button[type="submit"]{
+  background-color: #66BB6A;
+  color: #fff;
+}
+
+#Form>form>div.keypad>button[type="submit"]:hover,
+#Form>form>div.keypad>button[type="submit"]:focus {
+  background-color: #2E7D32;
+}
