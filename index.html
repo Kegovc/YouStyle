@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css" />
   <title>You Style</title>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.13/html-to-image.js" integrity="sha512-4W7+nCTcMQMFBnTRwvixN7il649NCqZiBfJ7WvzU7gxF12zOnaKwVYTSIzwrjy/cy+CPQxn2lAIVZIes+rPp2Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
   <!-- (section#YourEssence>(strong#Name{Nombre}+(p>(i#Age{Edad}+i#Pronoun{ }+i#Zodiac{Zodiaco}))+article>ul>(li#*12>(img[src="" alt=""]+span))+(li#>img[src="" alt=""])))+(div[style="display: flex;justify-content: center;"]>button.startBtn[rol="button" href="/#Form"]{Empezar}) -->
@@ -43,10 +43,10 @@
         <div class="field"><label for="i-food">Comida</label><input type="file" id="i-food" name="food"><span id="i-food-error"></span></div>
         <div class="field"><label for="i-character">Personaje</label><input type="file" id="i-character" name="character"><span id="i-character-error"></span></div>
         <div class="field"><label for="i-color">Color</label>
-          
+          <div>
             <input type="file" id="i-color" name="color">
-          
-          
+            <input type="color" id="i-color-picker" name="color-picker" value="#fff">
+          </div>
           <span id="i-color-error"></span>
         </div>
         <div class="field"><label for="i-place">Lugar</label><input type="file" id="i-place" name="place"><span id="i-place-error"></span></div>
