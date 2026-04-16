@@ -35,7 +35,7 @@
   </section>
   <div style="display: flex;justify-content: center;"><a class="startBtn" role="button" href="/#Form">Empezar</a></div>
   <!-- section#Form>form>((div.field>(label[for="i-name"]{Tu nombre}+input:text#i-name[name="name"]+span#i-name-error{}))+(div.field>(label[for="i-age"]{Tu fecha de nacimiento}+input#i-age[type="date" name="age"]+span#i-age-error{}))+(div.field*13>(label[for="i-${1:input}"]{${2:label}}+input[id="i-${1:input}" type="file" name="${1:input}"]+span[id="i-${1:input}-error"]{}))+(div.keypad>(button:reset{Limpiar}+button:submit{Crear}))) -->
-     <section id="Form">
+    <section id="Form">
       <form onsubmit="valid(event)" >
         <div class="field"><label for="i-name">Tu nombre</label><input type="text" name="name" id="i-name" :invalid><span id="i-name-error"></span></div>
         <div class="field"><label for="i-age">Tu fecha de nacimiento</label><input type="date" id="i-age" name="age"><span id="i-age-error"></span></div>
@@ -62,7 +62,8 @@
           <button type="reset">Limpiar</button>
           <button type="submit">Crear</button>
         </div>
-     </section>
+      </form>
+    </section>
 
   
   <script src="./index.js"></script>
