@@ -5,9 +5,11 @@ body{
 #YourEssence{
   --size: 20vmin;
   --time: 1.5s; 
+  --border: 1px;
   display: grid;
   width: 100vmin;
   min-height: 100vmin;
+  margin: 0 auto;
   background-color: var(--color,#fff);
   padding: 10px;
 }
@@ -38,13 +40,13 @@ body{
   grid-template-columns: repeat(4, var(--size));
   grid-template-rows: repeat(4, var(--size));
   width: calc(4 * var(--size));
-  border: 1px solid;
+  border: var(--border) solid;
 }
 
 #YourEssence>article>ul>li{
   display: grid;
   padding: 0;
-  border: 1px solid;
+  border: var(--border) solid;
   position: relative;
 }
 #YourEssence>article>ul>li#You{
@@ -56,7 +58,7 @@ body{
   display: grid;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  text-align: center;
+  
   place-content: center;
   background-color: #fff;
 }
@@ -111,7 +113,6 @@ body{
 
 
 
-/* CSS */
 .startBtn {
   background-color: #EA4C89;
   border-radius: 8px;
@@ -212,7 +213,7 @@ body{
   font-family: sans-serif;
 }
 
-/* Hace que el botón sea tipo bloque (arriba) */
+
 #Form>form>div.field input[type="file"]::file-selector-button {
   display: block;
   margin-bottom: 6px;
@@ -280,4 +281,4 @@ body{
 #Form>form>div.keypad>button[type="submit"]:hover,
 #Form>form>div.keypad>button[type="submit"]:focus {
   background-color: #2E7D32;
-}
+} 
